@@ -1,0 +1,17 @@
+.gitattributes   
+.gitignore
+.testignore
+gulpfile.js
+tsconfig.json
+tslint.json
+vsc-extension-quickstart.md
+yarn.lock
+
+.vscode/**
+.vscode-test/**
+out/test/**
+out/**/*.map
+preview-src/**
+pythonFiles/pydev/__pycache__/**
+src/**
+testExtension/**

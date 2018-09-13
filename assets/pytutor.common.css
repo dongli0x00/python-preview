@@ -1,0 +1,536 @@
+/* ========================================================================== 
+   Pytutor通用样式定义
+   ========================================================================== */
+
+body {
+    font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.ExecutionVisualizer table.visualizer td.vizLayoutTd {
+    vertical-align: top
+}
+
+/* ========================================================================== 
+   Visualizer左边栏样式定义
+   ========================================================================== */
+
+/**
+ * 语言标题。
+ */
+div.ExecutionVisualizer div#langDisplayDiv {
+    margin-top: 2pt;
+    margin-bottom: 3pt;
+    text-align: center;
+    font-size: 14pt;
+}
+
+/**
+ * 代码外框。
+ */
+div.ExecutionVisualizer div#pyCodeOutputDiv {
+    max-height: 460px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * 代码内框。
+ */
+div.ExecutionVisualizer table#pyCodeOutput {
+    /* 代码居中 */
+    margin: 6px auto;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    font-family: Consolas;
+    font-size: 11pt;
+    line-height: 1.1em;
+}
+
+/**
+ * 代码所在行。
+ */
+div.ExecutionVisulaizer table#pyCodeOutput td {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/**
+ * 代码内框左沟槽。
+ */
+div.ExecutionVisualizer #leftCodeGutterSVG {
+    width: 18px;
+    min-width: 18px;
+    height: 0px;
+}
+
+/**
+ * 代码执行箭头。
+ */
+div.ExecutionVisualizer #prevLegendArrowSVG,
+div.ExecutionVisualizer #curLegendArrowSVG {
+    width: 18px;
+    height: 10px;
+}
+
+/**
+ * 代码行号。
+ */
+div.ExecutionViualizer table#pyCodeOutput .lineNo {
+    padding: 0.2em 0.5em 0.2em 0.3em;
+    text-align: right;
+}
+
+/**
+ * 代码。
+ */
+div.ExecutionVisualizer table#pyCodeOutput .cod {
+    margin-left: 3px;
+    padding-left: 7px;
+    text-align: left;
+}
+
+/**
+ 图例，用来说明箭头含义。
+ */
+div.ExecutionVisualizer div#legendDiv {
+    padding: 0px;
+    text-align: left;
+    font-size: 9pt;
+}
+
+/**
+ * 用来说明Visualier用法。
+ */
+div.ExecutionVisualizer #codeFooterDocs {
+    margin-top: 5px;
+    margin-bottom: 12px;
+    width: 95%;
+    font-size: 8pt;
+}
+
+/**
+ * 代码执行进度条标题。
+ */
+div.ExecutionVisualizer #executionSliderCaption {
+    margin-top: 15px;
+    font-size: 8pt;
+}
+
+/**
+ * 代码执行进度条。
+ */
+div.ExecutionVisualizer #executionSlider {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 98%;
+}
+
+/**
+ * 滑杆以及滑杆手柄。
+ * 此处指进度条和进度条当前进度点。
+ */
+div.ExecutionVisualizer .ui-slider .ui-slider-handle {
+    border: 1px solid;
+}
+
+/**
+ * 代码执行进度条底部，用来显示断点信息。
+ */
+div.ExecutionVisualizer #executionSliderFooter {
+    margin-top: -7px;
+}
+
+/**
+ * 调试控件。
+ */
+div.ExecutionVisualizer #vcrControls {
+    margin: 15px auto;
+    text-align: center;
+}
+
+/**
+ * 调试按钮。
+ */
+div.ExecutionVisualizer #vcrControls button {
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid;
+    border-radius: 28px;
+    cursor: pointer;
+}
+
+/**
+ * 代码执行当前所处位置。
+ */
+div.ExecutionVisualizer #vcrControls #curInstr {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/**
+ * 用户输入窗口。
+ */
+div.ExecutionVisualizer div#rawUserInputDiv {
+    margin: 5px auto;
+    border: 1px solid;
+    padding: 5px;
+    width: 95%;
+    text-align: center;
+}
+
+/**
+ * 错误信息输出窗口。
+ */
+div.ExecutionVisualier #errorOutput {
+    margin-bottom: 4px;
+    padding-top: 2px;
+    font-size: 11pt;
+    line-height: 1.5em;
+}
+
+/**
+ * 调整大小的分隔符。
+ */
+.ui-resizable-e {
+    border: 3px solid;
+    width: 1px;
+}
+
+.ui-resizable-s {
+    border: 3px solid;
+    height: 1px;
+}
+
+/* ========================================================================== 
+   Visualizer右边栏样式定义
+   ========================================================================== */
+
+/**
+ * 程序控制台输出窗口。
+ */
+div.ExecutionVisualizer div#progOutputs {
+    margin-left: 13px;
+    margin-bottom: 3px;
+}
+
+/**
+ * 程序控制台窗口说明。
+ */
+div.ExecutionVisualizer #printOutputDocs {
+    margin-bottom: 3px;
+    font-size: 8pt;
+}
+
+/**
+ * 程序标准输出。
+ */
+div.ExecutionVisualizer #pyStdout {
+    border: 1px solid;
+    padding: 3px;
+    overflow: auto;
+    resize: none;
+    font-family: Consolas;
+    font-size: 10pt;
+}
+
+/**
+ * 栈和堆的样式定义。
+ */
+div.ExecutionVisualizer td#stack_td,
+div.ExecutionVisualizer td#heap_td {
+    vertical-align: top;
+    font-family: Consolas;
+    font-size: 12pt;
+}
+
+/**
+ * 全局变量区域和栈。
+ */
+div.ExecutionVisualizer div#globals_area,
+div.ExecutionVisualizer div#stack {
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+/**
+ * 栈标题。
+ */
+div.ExecutionVisualizer div#stackHeader {
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 14pt;
+}
+
+/**
+ * 栈帧。
+ */
+div.ExecutionVisualizer div.stackFrame,
+div.ExecutionVisualizer div.zombieStackFrame {
+    margin-bottom: 15px;
+    padding: 2px 6px 4px;
+}
+
+div.ExecutionVisualizer div.stackFrame {
+    border-left: 1px solid;
+}
+
+div.ExecutionVisualizer div.zombieStackFrame {
+    border-left: 1px dotted;
+    opacity: 0.5;
+}
+
+/**
+ * 栈帧标题。
+ */
+div.ExecutionVisualizer div.stackFrameHeader {
+    margin-top: 4px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    font-family: Consolas;
+    font-style: italic;
+    font-size: 12pt;
+}
+
+/**
+ * 栈帧中变量与变量值的表格。
+ */
+div.ExecutionVisualizer .stackFrameVarTable {
+    /* 右对齐 */
+    margin-left: auto;
+    margin-right: 0px;
+    padding-left: 3px;
+    border-collapse: separate;
+    border-spacing: 2px;
+    text-align: right;
+}
+
+/**
+ * 栈帧中的变量。
+ */
+div.ExecutionVisualizer td.stackFrameVar {
+    padding: 3px 8px 3px 1px;
+    text-align: right;
+}
+
+/**
+ * 栈帧中的变量值。
+ */
+div.ExecutionVisualizer td.stackFrameValue {
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    padding: 3px 1px 3px 3px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+/**
+ * 栈帧中返回值。
+ */
+div.ExecutionVisualizer .retval {
+    font-size: 8pt;
+}
+
+/**
+ * 堆。
+ */
+div.ExecutionVisualizer div#heap {
+    float: left;
+    padding-left: 30px;
+}
+
+/**
+ * 堆标题。
+ */
+div.ExecutionVisualizer div#heapHeader {
+    margin-bottom: 15px;
+    font-size: 14pt;
+}
+
+/**
+ * 堆对象外框。
+ */
+div.ExecutionVisualizer table.heapRow {
+    margin-bottom: 10px;
+}
+
+/**
+ * 堆对象内框。
+ */
+div.ExecutionVisualizer td.toplevelHeapObject {
+    padding: 4px 8px;
+}
+
+/**
+ * 堆对象。
+ */
+div.ExecutionVisualizer div.heapObject {
+    padding-left: 2px;
+}
+
+/**
+ * 类型标签。
+ */
+div.ExecutionVisualizer .objectIdLabel,
+div.ExecutionVisualizer .typeLabel {
+    margin-bottom: 2px;
+    font-size: 8pt;
+}
+
+/**
+ * 堆中原始类型，比如int类型。
+ */
+div.ExecutionVisualizer div.heapPrimitive {
+    padding-left: 4px;
+}
+
+/**
+ * 原始类型的渲染。
+ */
+div.ExecutionVisualizer .stringObj,
+div.ExecutionVisualizer .customObj,
+div.ExecutionVisualizer .funcObj {
+    white-space: nowrap;
+}
+
+/* ========================================================================== 
+   基本复合类型的渲染
+   ========================================================================== */
+
+/**
+ * list、tuple和set类型。
+ */
+div.ExecutionVisualizer table.listTbl {
+    border: 0px solid;
+    border-spacing: 0px;
+}
+
+div.ExecutionVisualizer table.tupleTbl {
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-spacing: 0px;
+}
+
+div.ExecutionVisualizer table.setTbl {
+    border: 1px solid;
+    border-spacing: 0px;
+    text-align: center;
+}
+
+/**
+ * list和tuple头。
+ */
+div.ExecutionVisualizer table.listTbl td.listHeader,
+div.ExecutionVisualizer table.tupleTbl td.tupleHeader {
+    border-left: 1px solid;
+    padding: 2px 1px 3px 4px;
+    text-align: left;
+    font-size: 8pt;
+}
+
+
+/**
+ * list、tuple和set中的元素。
+ */
+div.ExecutionVisualizer table.listTbl td.listElt {
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+}
+
+div.ExecutionVisualizer table.tupleTbl td.tupleElt {
+    border-left: 1px solid;
+}
+
+div.ExecutionVisualizer table.listTbl td.listElt,
+div.ExecutionVisualizer table.tupleTbl td.tupleElt {
+    padding: 0px 10px 8px;
+    vertical-align: bottom;
+}
+
+div.ExecutionVisualizer table.setTbl td.setElt {
+    padding: 8px
+}
+
+/**
+ * 自定义对象。
+ */
+div.ExecutionVisualizer tabl.customObjTbl {
+    border: 1px solid;
+}
+
+/**
+ * 自定义对象中的元素。
+ */
+div.ExecutionVisualizer table.customObjTbl td.customObjElt {
+    padding: 5px;
+}
+
+/**
+ * dict、instance、class。
+ */
+div.ExecutionVisualizer table.dictTbl,
+div.ExecutionVisualizer table.instTbl,
+div.ExecutionVisualizer table.classTbl {
+    border-spacing: 1px;
+}
+
+/**
+ * dict、instance和class中的键。
+ */
+div.ExecutionVisualizer table.dictTbl td.dictKey,
+div.ExecutionVisualizer table.dictTbl td.instKey,
+div.ExecutionVisualizer table.classTbl td.classKey {
+    padding: 6px 4px 6px 10px;
+    text-align: right;
+}
+
+/**
+ * dict、instance和class中的值。
+ */
+div.ExecutionVisualizer table.dictTbl td.dictVal,
+div.ExecutionVisualizer table.instTbl td.instVal,
+div.ExecutionVisualizer table.classTbl td.classVal {
+    padding: 6px 10px 6px 4px;
+}
+
+/**
+ * class和function。
+ */
+div.ExecutionVisualizer table.classTbl,
+div.ExecutionVisualizer table.funcTbl {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+/**
+ * class和instance表格下的元素。
+ */
+div.ExecutionVisualizer table.classTbl td,
+div.ExectuonVisualizer tabl.instTbl td {
+    border-bottom: 1px solid;
+}
+
+/**
+ * class和instance中的值。
+ */
+div.ExecutionVisualizer table.classTbl td.classVal,
+div.ExecutionVisualizer table.instTbl td.instVal {
+    border-left: 1px solid;
+}
+
+/**
+ * dict嵌入到list、tuple、dict、inst以及class中的样式。
+ */
+div.ExecutionVisualizer td.listElt table.dictTbl,
+div.ExecutionVisualizer td.tupleElt table.dictTbl,
+div.ExecutionVisualizer td.dictVal table.dictTbl,
+div.ExecutionVisualizer td.instVal table.dictTbl,
+div.ExecutionVisualizer td.classVal table.dictTbl {
+    border: 1px solid;
+}

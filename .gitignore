@@ -1,0 +1,10 @@
+out
+**/node_modules
+.vscode-test/
+*.vsix
+
+assets/index.js
+preview-src/node_modules
+preview-src/typings
+pythonFiles/pydev/__pycache__
+python-preview

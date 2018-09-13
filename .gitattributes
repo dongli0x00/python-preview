@@ -1,0 +1,6 @@
+# Set default behavior to automatically normalize line endings.
+package.json text eol=lf
+package.lock.json text eol=lf
+
+preview-src/package.json text eol=lf
+preview-src/package-lock.json text eol=lf

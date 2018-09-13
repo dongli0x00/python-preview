@@ -1,0 +1,638 @@
+/* ========================================================================== 
+   Visualizer左边栏主题样式定义
+   ========================================================================== */
+
+/**
+ * 语言标题。
+ */
+div.ExecutionVisualizer div#langDisplayDiv {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 代码外框滚动条。
+ */
+div.ExecutionVisualizer div#pyCodeOutputDiv::-webkit-scrollbar-track,
+div.ExecutionVisualizer div#pyCodeOutputDiv::-webkit-scrollbar-corner {
+    background-color: var(--vscode-editor-background);
+}
+
+div.ExecutionVisualizer div#pyCodeOutputDiv::-webkit-scrollbar-thumb {
+    background-color: var(--vscode-scrollbarSlider-background);
+}
+div.ExecutionVisualizer div#pyCodeOutputDiv::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vscode-scrollbarSlider-hoverBackground);
+}
+div.ExecutionVisualizer div#pyCodeOutputDiv::-webkit-scrollbar-thumb:active {
+    background-color: var(--vscode-scrollbarSlider-activeBackground)
+}
+
+/**
+ * 代码内框。
+ */
+body.vscode-light div.ExecutionVisualizer table#pyCodeOutput {
+    border-top-color: rgba(0, 0, 0, 0.15);
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+body.vscode-dark div.ExecutionVisualizer table#pyCodeOutput {
+    border-top-color: rgba(255, 255, 255, 0.15);
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table#pyCodeOutput {
+    border-top-color: var(--vscode-contrastBorder);
+    border-bottom-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * 行号前景色。
+ */
+div.ExecutionVisualizer table#pyCodeOutput .lineNo {
+    color: var(--vscode-editorLineNumber-foreground);
+}
+
+/**
+ * 图例，用来说明箭头含义。
+ */
+div.ExecutionVisualizer div#legendDiv {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 用来说明Visualizer用法。
+ */
+div.ExecutionVisualizer #codeFooterDocs {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 代码执行进度条标题。
+ */
+div.ExecutionVisualizer #executionSliderCaption {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 进度条。
+ */
+div.ExecutionVisualizer #executionSlider {
+    background: var(--vscode-editor-background);
+}
+
+div.ExecutionVisualizer #executionSlider {
+    border: 1px solid var(--vscode-scrollbarSlider-background);
+}
+
+/**
+ * 代码执行进度条滑竿手柄。
+ */
+div.ExecutionVisualizer .ui-slider>.ui-slider-handle,
+div.ExecutionVisualizer .ui-slider>.ui-slider-default,
+div.ExecutionVisualizer .ui-slider>.ui-state-focus,
+div.ExecutionVisualizer .ui-slider>.ui-state-hover,
+div.ExecutionVisualizer .ui-slider>.ui-state-active {
+    background: var(--vscode-editor-background);
+}
+
+div.ExecutionVisualizer .ui-slider>.ui-slider-handle,
+div.ExecutionVisualizer .ui-slider>.ui-state-focus {
+    border: 1px solid var(--vscode-scrollbarSlider-background);
+    outline: 0px;
+}
+div.ExecutionVisualizer .ui-slider>.ui-state-hover {
+    border: 1px solid var(--vscode-scrollbarSlider-hoverBackground);
+    outline: 0px;
+}
+div.ExecutionVisualizer .ui-slider>.ui-state-active {
+    border: 1px solid var(--vscode-scrollbarSlider-activeBackground);
+    outline: 0px;
+}
+
+/**
+ * 调试控件。
+ */
+div.ExecutionVisualizer #vcrControls button {
+    color: var(--vscode-editor-foreground);
+    background-color: var(--vscode-editor-background);
+}
+
+div.ExecutionVisualizer #vcrControls button:focus {
+    outline: none;
+}
+
+div.ExecutionVisualizer #vcrControls button:active {
+    border-style: outset;
+}
+
+div.ExecutionVisualizer #vcrControls button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+body.vscode-light div.ExecutionVisualizer #vcrControls button {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.vscode-light div.ExecutionVisualizer #vcrControls button:focus {
+    border-color: rgba(0, 0, 0, 0.6);
+}
+
+body.vscode-light div.ExecutionVisualizer #vcrControls button:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.vscode-light div.ExecutionVisualizer #vcrControls button:active {
+    border-color: rgba(0, 0, 0, 0.45);
+}
+
+body.vscode-dark div.ExecutionVisualizer #vcrControls button {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.vscode-dark div.ExecutionVisualizer #vcrControls button:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+body.vscode-dark div.ExecutionVisualizer #vcrControls button:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.vscode-dark div.ExecutionVisualizer #vcrControls button:active {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer #vcrControls button {
+    border-color: var(--vscode-contrastBorder);
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer #vcrControls button:active {
+    border-color: var(--vscode-contrastActiveBorder);
+}
+
+/**
+ * 用户输入窗口。
+ */
+div.ExecutionVisualizer  #rawUserInputDiv {
+    border-color: #e93f34;
+}
+
+/**
+ * 错误信息输出窗口。
+ */
+div.ExecutionVisualizer #errorOutput {
+    color: var(--vscode-errorForeground);
+}
+
+/**
+ * 调整大小的分隔符。
+ */
+.ui-resizable-e,
+.ui-resizable-s {
+    background-color: var(--vscode-panel-border);
+    border-color: var(--vscode-editor-background);
+}
+
+.ui-resizable-e:hover {
+    border-color: var(--vscode-panel-border);
+    width: 0px
+}
+
+.ui-resizable-s:hover {
+    border-color: var(--vscode-panel-border);
+    height: 0px;
+}
+
+/* ========================================================================== 
+   Visualizer右边栏主题样式定义
+   ========================================================================== */
+
+/**
+ * 程序控制台窗口说明。
+ */
+div.ExecutionVisualizer #printOutputDocs {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 程序标准输出。
+ */
+div.ExecutionVisualizer #pyStdout {
+    background-color: var(--vscode-editor-background);
+    color: var(--vscode-editor-foreground);
+}
+
+div.ExecutionVisualizer #pyStdout:focus {
+    outline: 0px;
+    outline-offset: 0px;
+}
+
+div.ExecutionVisualizer #pyStdout::-webkit-scrollbar-track,
+div.ExecutionVisualizer #pyStdout::-webkit-scrollbar-corner {
+    background-color: var(--vscode-editor-background);
+}
+
+div.ExecutionVisualizer #pyStdout::-webkit-scrollbar-thumb {
+    background-color: var(--vscode-scrollbarSlider-background);
+}
+div.ExecutionVisualizer #pyStdout::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vscode-scrollbarSlider-hoverBackground);
+}
+div.ExecutionVisualizer #pyStdout::-webkit-scrollbar-thumb:active {
+    background-color: var(--vscode-scrollbarSlider-activeBackground)
+}
+
+body.vscode-light div.ExecutionVisualizer #pyStdout {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.vscode-dark div.ExecutionVisualizer #pyStdout {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer #pyStdout {
+    border-color: var(--vscode-contrastBorder);
+}
+
+body.vscode-light div.ExecutionVisualizer div#progOutputs .ui-icon {
+    background-image: url("images/ui-icons_222222_256x240.png");
+}
+
+body.vscode-dark div.ExecutionVisualizer div#progOutputs .ui-icon {
+    background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer div#progOutputs .ui-icon {
+    background-image: url("images/ui-icons_228ef1_256x240.png");
+}
+
+/**
+ * 堆标题。
+ */
+div.ExecutionVisualizer div#stackHeader {
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * 栈帧。
+ */
+div.ExecutionVisualizer div.stackFrame,
+div.ExecutionVisualizer div.zombieStackFrame {
+    color: var(--vscode-editor-foreground);
+}
+ 
+body.vscode-light div.ExecutionVisualizer div.stackFrame,
+body.vscode-light div.ExecutionVisualizer div.zombieStackFrame {
+    border-left-color: #a6b3b6
+}
+body.vscode-light div.ExecutionVisualizer div.highlightedStackFrame {
+    /* 霜色 */
+    background-color: #e9f1f6;
+}
+
+body.vscode-dark div.ExecutionVisualizer div.stackFrame,
+body.vscode-dark div.ExecutionVisualizer div.zombieStackFrame {
+    border-left-color: rgba(255, 255, 255, 0.3);
+}
+body.vscode-dark div.ExecutionVisualizer div.highlightedStackFrame {
+    /* 紫色 */
+    background-color: #800080;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer div.stackFrame,
+body.vscode-high-contrast div.ExecutionVisualizer div.zombieStackFrame {
+    border-left-color: var(--vscode-contrastBorder);
+}
+body.vscode-high-contrast div.ExecutionVisualizer div.highlightedStackFrame {
+    /* 橘红色 */
+    background-color: #ff7500;
+}
+
+/**
+ * 栈帧中的变量值。
+ */
+body.vscode-light div.ExecutionVisualizer td.stackFrameValue {
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    border-left-color: rgba(0, 0, 0, 0.3);
+}
+
+body.vscode-dark div.ExecutionVisualizer td.stackFrameValue {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer td.stackFrameValue {
+    border-bottom-color: var(--vscode-contrastBorder);
+    border-left-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * 栈帧中返回值前景色。
+ */
+div.ExecutionVisualizer .stackFrame .retval {
+    color: #e93f34;
+}
+
+/**
+ * 堆标题。
+ */
+div.ExecutionVisualizer #heapHeader {
+    color: var(--vscode-editor-foreground);
+}
+
+/* ========================================================================== 
+   基本复合类型的主题
+   ========================================================================== */
+
+/**
+ * list、tuple和set类型。
+ */
+body.vscode-light div.ExecutionVisualizer table.listTbl,
+body.vscode-light div.ExecutionVisualizer table.tupleTbl,
+body.vscode-light div.ExecutionVisualizer table.setTbl {
+    background-color: #ffffc6;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.listTbl,
+body.vscode-dark div.ExecutionVisualizer table.tupleTbl,
+body.vscode-dark div.ExecutionVisualizer table.setTbl,
+body.vscode-high-contrast div.ExecutionVisualizer table.listTbl,
+body.vscode-high-contrast div.ExecutionVisualizer table.tupleTbl,
+body.vscode-high-contrast div.ExecutionVisualizer table.setTbl {
+    /* 琥珀色 */
+    background-color: #ca6924;
+}
+
+div.ExecutionVisualizer table.tupleTbl {
+    color: var(--vscode-editor-foreground);
+}
+
+body.vscode-light div.ExecutionVisualizer table.tupleTbl,
+body.vscode-light div.ExecutionVisualizer table.setTbl {
+    border-color: #555555;
+    
+}
+
+body.vscode-dark div.ExecutionVisualizer table.tupleTbl,
+body.vscode-dark div.ExecutionVisualizer table.setTbl {
+    border-color: #aaaaaa;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.tupleTbl,
+body.vscode-high-contrast div.ExecutionVisualizer table.setTbl {
+    border-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * list和tuple头。
+ */
+body.vscode-light div.ExecutionVisualizer table.listTbl td.listHeader,
+body.vscode-light div.ExecutionVisualizer table.tupleTbl td.tupleHeader {
+    border-left-color: #555555;
+    color: #777
+}
+
+body.vscode-dark div.ExecutionVisualizer table.listTbl td.listHeader,
+body.vscode-dark div.ExecutionVisualizer table.tupleTbl td.tupleHeader {
+    border-left-color: #aaaaaa;
+    color: #999
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.listTbl td.listHeader,
+body.vscode-high-contrast div.ExecutionVisualizer table.tupleTbl td.tupleHeader {
+    border-left-color: var(--vscode-contrastBorder);
+    color: #999
+}
+
+/**
+ * list元素。
+ */
+body.vscode-light div.ExecutionVisualizer table.listTbl td.listElt {
+    border-bottom-color: #555555;
+    border-left-color: #555555;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.listTbl td.listElt {
+    border-bottom-color: #aaaaaa;
+    border-left-color: #aaaaaa;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.listTbl td.listElt {
+    border-bottom-color: var(--vscode-contrastBorder);
+    border-left-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * tuple元素。
+ */
+body.vscode-light div.ExecutionVisualizer table.tupleTbl td.tupleElt {
+    border-left-color: #555555;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.tupleTbl td.tupleElt {
+    border-left-color: #aaaaaa;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.tupleTbl td.tupleElt {
+    border-left-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * 自定义对象。
+ */
+div.ExecutionVisualizer table.customObjTbl {
+    background-color: var(--vscode-editor-background);
+    border-color: var(--vscode-editor-foreground);
+    color: var(--vscode-editor-foreground);
+}
+
+/**
+ * dict、class和instance中的键的背景色。
+ */
+body.vscode-light div.ExecutionVisualizer table.dictTbl td.dictKey,
+body.vscode-light div.ExecutionVisualizer table.classTbl td.classKey,
+body.vscode-light div.ExecutionVisualizer table.instTbl td.instKey {
+    background-color: #faebbf;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.dictTbl td.dictKey,
+body.vscode-dark div.ExecutionVisualizer table.classTbl td.classKey,
+body.vscode-dark div.ExecutionVisualizer table.instTbl td.instKey,
+body.vscode-high-contrast div.ExecutionVisualizer table.dictTbl td.dictKey,
+body.vscode-high-contrast div.ExecutionVisualizer table.classTbl td.classKey,
+body.vscode-high-contrast div.ExecutionVisualizer table.instTbl td.instKey {
+    /* 跎颜 */
+    background-color: #f9906f;
+}
+
+/**
+ * dict、class和instance中的值的背景色。
+ */
+body.vscode-light div.ExecutionVisualizer table.dictTbl td.dictVal,
+body.vscode-light div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-light div.ExecutionVisualizer table.instTbl td.instVal {
+    background-color: #ffffc6;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.dictTbl td.dictVal,
+body.vscode-dark div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-dark div.ExecutionVisualizer table.instTbl td.instVal,
+body.vscode-high-contrast div.ExecutionVisualizer table.dictTbl td.dictVal,
+body.vscode-high-contrast div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-high-contrast div.ExecutionVisualizer table.instTbl td.instVal {
+    /* 茶色 */
+    background-color: #b35c44;
+}
+
+/**
+ * class和function表格的边界色。
+ */
+body.vscode-light div.ExecutionVisualizer table.classTbl,
+body.vscode-light div.ExecutionVisualizer table.funcTbl {
+    border-color: #888;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.classTbl,
+body.vscode-dark div.ExecutionVisualizer table.funcTbl {
+    border-color: #888;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.classTbl,
+body.vscode-high-contrast div.ExecutionVisualizer table.funcTbl {
+    border-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * class和instance表格下的元素边界。
+ */
+body.vscode-light div.ExecutionVisualizer table.classTbl td,
+body.vscode-light div.ExecutionVisualizer table.instTbl td {
+    border-bottom-color: #888;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.classTbl td,
+body.vscode-dark div.ExecutionVisualizer table.instTbl td {
+    border-bottom-color: #888;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.classTbl td,
+body.vscode-high-contrast div.ExecutionVisualizer table.instTbl td {
+    border-bottom-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * class和instance中的值。
+ */
+body.vscode-light div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-light div.ExecutionVisualizer table.instTbl td.instVal {
+    border-left-color: #888;
+}
+
+body.vscode-dark div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-dark div.ExecutionVisualizer table.instTbl td.instVal {
+    border-left-color: #888;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer table.classTbl td.classVal,
+body.vscode-high-contrast div.ExecutionVisualizer table.instTbl td.instVal {
+    border-left-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * dict嵌入到list、tuple、dict、inst以及class中的边界色。
+ */
+body.vscode-light div.ExecutionVisualizer td.listElt table.dictTbl,
+body.vscode-light div.ExecutionVisualizer td.tupleElt table.dictTbl,
+body.vscode-light div.ExecutionVisualizer td.dictVal table.dictTbl,
+body.vscode-light div.ExecutionVisualizer td.instVal table.dictTbl,
+body.vscode-light div.ExecutionVisualizer td.classVal table.dictTbl {
+    border-color: #888;
+}
+
+body.vscode-dark div.ExecutionVisualizer td.listElt table.dictTbl,
+body.vscode-dark div.ExecutionVisualizer td.tupleElt table.dictTbl,
+body.vscode-dark div.ExecutionVisualizer td.dictVal table.dictTbl,
+body.vscode-dark div.ExecutionVisualizer td.instVal table.dictTbl,
+body.vscode-dark div.ExecutionVisualizer td.classVal table.dictTbl {
+    border-color: #888;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer td.listElt table.dictTbl,
+body.vscode-high-contrast div.ExecutionVisualizer td.tupleElt table.dictTbl,
+body.vscode-high-contrast div.ExecutionVisualizer td.dictVal table.dictTbl,
+body.vscode-high-contrast div.ExecutionVisualizer td.instVal table.dictTbl,
+body.vscode-high-contrast div.ExecutionVisualizer td.classVal table.dictTbl {
+    border-color: var(--vscode-contrastBorder);
+}
+
+/**
+ * 高亮栈帧中箭头的起点、本身以及终点
+ */
+body.vscode-light div.ExecutionVisualizer div.highlightedStackFrame circle {
+    fill: #005583;
+}
+body.vscode-light div.ExecutionVisualizer div.highlightedStackFrame path {
+    stroke: #005583;
+}
+body.vscode-light div.ExecutionVisualizer div.highlightedStackFrame path[class] {
+    stroke: #005583;
+    fill: #005583;
+}
+
+body.vscode-dark div.ExecutionVisualizer div.highlightedStackFrame circle {
+    fill: #005583;
+}
+body.vscode-dark div.ExecutionVisualizer div.highlightedStackFrame path {
+    stroke: #005583;
+}
+body.vscode-dark div.ExecutionVisualizer div.highlightedStackFrame path[class] {
+    stroke: #005583;
+    fill: #005583;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer div.highlightedStackFrame circle {
+    fill: #005583;
+}
+body.vscode-high-contrast div.ExecutionVisualizer div.highlightedStackFrame path {
+    stroke: #005583;
+}
+body.vscode-high-contrast div.ExecutionVisualizer div.highlightedStackFrame path[class] {
+    stroke: #005583;
+    fill: #005583;
+}
+
+/**
+ * 高亮栈帧中箭头的起点、本身以及终点
+ */
+body.vscode-light div.ExecutionVisualizer div.zombieStackFrame circle {
+    fill: #ccc;
+}
+body.vscode-light div.ExecutionVisualizer div.zombieStackFrame path {
+    stroke: #ccc;
+}
+body.vscode-light div.ExecutionVisualizer div.zombieStackFrame path[class] {
+    stroke: #ccc;
+    fill: #ccc;
+}
+
+body.vscode-dark div.ExecutionVisualizer div.zombieStackFrame circle {
+    fill: #ccc;
+}
+body.vscode-dark div.ExecutionVisualizer div.zombieStackFrame path {
+    stroke: #ccc;
+}
+body.vscode-dark div.ExecutionVisualizer div.zombieStackFrame path[class] {
+    stroke: #ccc;
+    fill: #ccc;
+}
+
+body.vscode-high-contrast div.ExecutionVisualizer div.zombieStackFrame circle {
+    fill: #ccc;
+}
+body.vscode-high-contrast div.ExecutionVisualizer div.zombieStackFrame path {
+    stroke: #ccc;
+}
+body.vscode-high-contrast div.ExecutionVisualizer div.zombieStackFrame path[class] {
+    stroke: #ccc;
+    fill: #ccc;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "preview-src",
+  "globalDependencies": {
+    "require": "github:DefinitelyTyped/DefinitelyTyped/requirejs/require.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "jquery.bbq": "github:DefinitelyTyped/DefinitelyTyped/jquery.bbq/jquery.bbq.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "ace": "github:DefinitelyTyped/DefinitelyTyped/ace/ace.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "qtip2": "github:DefinitelyTyped/DefinitelyTyped/qtip2/qtip2.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "jqueryui": "github:DefinitelyTyped/DefinitelyTyped/jqueryui/jqueryui.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "d3": "github:DefinitelyTyped/DefinitelyTyped/d3/d3.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "diff-match-patch": "github:DefinitelyTyped/DefinitelyTyped/diff-match-patch/diff-match-patch.d.ts#1315d46f8066eec8c197914da88e98629ebc2254",
+    "jquery.simplemodal": "github:DefinitelyTyped/DefinitelyTyped/jquery.simplemodal/jquery.simplemodal.d.ts#1315d46f8066eec8c197914da88e98629ebc2254"
+  }
+}

@@ -1,0 +1,497 @@
+{
+    "name": "python-preview",
+    "displayName": "%displayName%",
+    "description": "%description%",
+    "version": "0.0.1",
+    "icon": "python-icon.png",
+    "publisher": "dongli",
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Debuggers"
+    ],
+    "activationEvents": [
+        "onCommand:pythonPreview.showPreview",
+        "onCommand:pythonPreview.showPreviewToSide",
+        "onCommand:pythonPreview.showLockedPreviewToSide",
+        "onCommand:pythonPreview.showSource",
+        "onCommand:pythonPreview.refresh",
+        "onCommand:pythonPreview.toggleLock",
+        "onWebviewPanel:pythonPreview"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "pythonPreview.showPreview",
+                "title": "%pythonPreview.showPreview.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/Preview.svg",
+                    "dark": "./assets/Preview_inverse.svg"
+                }
+            },
+            {
+                "command": "pythonPreview.showPreviewToSide",
+                "title": "%pythonPreview.showPreviewToSide.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/PreviewOnRightPane_16x.svg",
+                    "dark": "./assets/PreviewOnRightPane_16x_dark.svg"
+                }
+            },
+            {
+                "command": "pythonPreview.showLockedPreviewToSide",
+                "title": "%pythonPreview.showLockedPreviewToSide.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/PreviewOnRightPane_16x.svg",
+                    "dark": "./assets/PreviewOnRightPane_16x_dark.svg"
+                }
+            },
+            {
+                "command": "pythonPreview.showSource",
+                "title": "%pythonPreview.showSource.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/ViewSource.svg",
+                    "dark": "./assets/ViewSource_inverse.svg"
+                }
+            },
+            {
+                "command": "pythonPreview.refresh",
+                "title": "%pythonPreview.refresh.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/Refresh.svg",
+                    "dark": "./assets/Refresh_inverse.svg"
+                }
+            },
+            {
+                "command": "pythonPreview.toggleLock",
+                "title": "%pythonPreview.toggleLock.title%",
+                "category": "Python Preview",
+                "icon": {
+                    "light": "./assets/ToggleLock.svg",
+                    "dark": "./assets/ToggleLock_inverse.svg"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "pythonPreview.showPreviewToSide",
+                    "when": "editorLangId == python",
+                    "alt": "pythonPreview.showPreview",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.showSource",
+                    "when": "pythonPreviewFocus",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.refresh",
+                    "when": "pythonPreviewFocus",
+                    "group": "1_pythonPreview"
+                },
+                {
+                    "command": "pythonPreview.toggleLock",
+                    "when": "pythonPreviewFocus",
+                    "group": "1_pythonPreview"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "pythonPreview.showPreviewToSide",
+                    "when": "resourceLangId == python",
+                    "group": "navigation"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "pythonPreview.showPreview",
+                    "when": "editorLangId == python",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.showPreviewToSide",
+                    "when": "editorLangId == python",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.showLockedPreviewToSide",
+                    "when": "editorLangId == python",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.showSource",
+                    "when": "pythonPreviewFocus",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonPreview.toggleLock",
+                    "when": "pythonPreviewFocus"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "pythonPreview.showPreview",
+                "key": "shift+ctrl+v",
+                "mac": "shift+cmd+v",
+                "when": "editorLangId == python"
+            },
+            {
+                "command": "pythonPreview.showPreviewToSide",
+                "key": "ctrl+k v",
+                "mac": "cmd+k v",
+                "when": "editorLangId == python"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Python Preview",
+            "properties": {
+                "pythonPreview.disableHeapNesting": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%pythonPreview.disableHeapNesting.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.textualMemoryLabels": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%pythonPreview.textualMemoryLabels.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.compactFuncLabels": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%pythonPreview.compactFuncLabels.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.showAllFrameLabels": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%pythonPreview.showAllFrameLabels.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.hideCode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%pythonPreview.hideCode.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.codAndNavWidth": {
+                    "type": "number",
+                    "default": 510,
+                    "description": "%pythonPreview.codAndNavWidth.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.allowAllModules": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%pythonPreview.allowAllModules.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.maxExecutedLines": {
+                    "type": "number",
+                    "default": 1000,
+                    "description": "%pythonPreview.maxExecutedLines.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.cumulativeMode": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%pythonPreview.cumulativeMode.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.trace": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "%pythonPreview.trace.desc%",
+                    "scope": "window"
+                },
+                "pythonPreview.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.fontSize": {
+                    "type": "number",
+                    "default": 16,
+                    "description": "%pythonPreview.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.langDisplay.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.langDisplay.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.langDisplay.fontSize": {
+                    "type": "string",
+                    "default": 14,
+                    "description": "%pythonPreview.langDisplay.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.code.fontFamily": {
+                    "type": "string",
+                    "default": "Andale mono, monospace",
+                    "description": "%pythonPreview.code.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.code.fontSize": {
+                    "type": "string",
+                    "default": 15,
+                    "description": "%pythonPreview.code.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.code.lineHeight": {
+                    "type": "number",
+                    "default": 1.2,
+                    "description": "%pythonPreview.code.lineHeight.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.legend.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.legend.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.legend.fontSize": {
+                    "type": "number",
+                    "default": 12,
+                    "description": "%pythonPreview.legend.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.codeFooterDocs.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.codeFooterDocs.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.codeFooterDocs.fontSize": {
+                    "type": "number",
+                    "default": 12,
+                    "description": "%pythonPreview.codeFooterDocs.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.printOutputDocs.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.printOutputDocs.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.printOutputDocs.fontSize": {
+                    "type": "number",
+                    "default": 12,
+                    "description": "%pythonPreview.printOutputDocs.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.pyStdout.fontFamily": {
+                    "type": "string",
+                    "default": "Andale mono, monospace",
+                    "description": "%pythonPreview.pyStdout.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.pyStdout.fontSize": {
+                    "type": "number",
+                    "default": 14,
+                    "description": "%pythonPreview.pyStdout.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.retVal.fontSize": {
+                    "type": "number",
+                    "default": 12,
+                    "description": "%pythonPreview.retVal.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackAndHeapHeader.fontFamily": {
+                    "type": "string",
+                    "default": "erdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.stackAndHeapHeader.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackAndHeapHeader.fontSize": {
+                    "type": "number",
+                    "default": 14,
+                    "description": "%pythonPreview.stackAndHeapHeader.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackFrame.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.stackFrame.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackFrame.fontSize": {
+                    "type": "number",
+                    "default": 14,
+                    "description": "%pythonPreview.stackFrame.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackFrameHeader.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.stackFrameHeader.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.stackFrameHeader.fontSize": {
+                    "type": "number",
+                    "default": 14,
+                    "description": "%pythonPreview.stackFrameHeader.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.heapObject.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.heapObject.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.heapObject.fontSize": {
+                    "type": "number",
+                    "default": 14,
+                    "description": "%pythonPreview.heapObject.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.typeLabel.fontFamily": {
+                    "type": "string",
+                    "default": "verdana, arial, helvetica, sans-serif",
+                    "description": "%pythonPreview.typeLabel.fontFamily.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.typeLabel.fontSize": {
+                    "type": "number",
+                    "default": 12,
+                    "description": "%pythonPreview.typeLabel.fontSize.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.light.highlightedArrow.color": {
+                    "type": "string",
+                    "default": "#005583",
+                    "description": "%pythonPreview.light.highlightedArrow.color.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.light.highlightedStackFrame.bgColor": {
+                    "type": "string",
+                    "default": "#e9f1f6",
+                    "description": "%pythonPreview.light.highlightedStackFrame.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.light.list-tuple-setTbl.bgColor": {
+                    "type": "string",
+                    "default": "#ffffc6",
+                    "description": "%pythonPreview.light.list-tuple-setTbl.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.light.dict-class-instKey.bgColor": {
+                    "type": "string",
+                    "default": "#faebbf",
+                    "description": "%pythonPreview.light.dict-class-instKey.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.light.dict-class-instVal.bgColor": {
+                    "type": "string",
+                    "default": "#ffffc6",
+                    "description": "%pythonPreview.light.dict-class-instVal.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.dark.highlightedArrow.color": {
+                    "type": "string",
+                    "default": "#005583",
+                    "description": "%pythonPreview.dark.highlightedArrow.color.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.dark.highlightedStackFrame.bgColor": {
+                    "type": "string",
+                    "default": "#800080",
+                    "description": "%pythonPreview.dark.highlightedStackFrame.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.dark.list-tuple-setTbl.bgColor": {
+                    "type": "string",
+                    "default": "#ca6924",
+                    "description": "%pythonPreview.dark.list-tuple-setTbl.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.dark.dict-class-instKey.bgColor": {
+                    "type": "string",
+                    "default": "#f9906f",
+                    "description": "%pythonPreview.dark.dict-class-instKey.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.dark.dict-class-instVal.bgColor": {
+                    "type": "string",
+                    "default": "#b35c44",
+                    "description": "%pythonPreview.dark.dict-class-instVal.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.high-contrast.highlightedArrow.color": {
+                    "type": "string",
+                    "default": "#005583",
+                    "description": "%pythonPreview.high-contrast.highlightedArrow.color.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.high-contrast.highlightedStackFrame.bgColor": {
+                    "type": "string",
+                    "default": "#ff7500",
+                    "description": "%pythonPreview.high-contrast.highlightedStackFrame.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.high-contrast.list-tuple-setTbl.bgColor": {
+                    "type": "string",
+                    "default": "#ca6924",
+                    "description": "%pythonPreview.high-contrast.list-tuple-setTbl.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.high-contrast.dict-class-instKey.bgColor": {
+                    "type": "string",
+                    "default": "#f9906f",
+                    "description": "%pythonPreview.high-contrast.dict-class-instKey.bgColor.desc%",
+                    "scope": "resource"
+                },
+                "pythonPreview.high-contrast.dict-class-instVal.bgColor": {
+                    "type": "string",
+                    "default": "#b35c44",
+                    "description": "%pythonPreview.high-contrast.dict-class-instVal.bgColor.desc%",
+                    "scope": "resource"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "clean:python-preview": "gulp clean:python-preview",
+        "extract:python-preview": "npm run compile && gulp extract:python-preview"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-filter": "^5.1.0",
+        "parse-semver": "^1.1.1",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "underscore": "^1.9.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {
+        "tree-kill": "^1.2.0",
+        "uint64be": "^2.0.2",
+        "untildify": "^3.0.3"
+    }
+}
