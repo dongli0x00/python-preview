@@ -83,6 +83,6 @@ gulp.task('extract:python-preview', ['clean:python-preview'], () => {
     
     const dependencies = getProductionDependencies(__dirname);
     const paths = dependencies.map(dep => path.join(dep.path, '**'));
-    gulp.src(paths, { base: './node_modules' })
+    return gulp.src(paths, { base: './node_modules' })
         .pipe(gulp.dest('./python-preview/node_modules'));
 });

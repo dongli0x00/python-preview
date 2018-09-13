@@ -4,13 +4,28 @@
     "description": "%description%",
     "version": "0.0.1",
     "icon": "python-icon.png",
+    "author": {
+        "name": "Dong Li",
+        "email": "dongli0x00@gmail.com"
+    },
     "publisher": "dongli",
+    "license": "MIT",
+    "homepage": "https://github.com/dongli0x00/python-preview",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dongli0x00/python-preview"
+    },
     "engines": {
         "vscode": "^1.26.0"
     },
     "categories": [
         "Programming Languages",
         "Debuggers"
+    ],
+    "keywords": [
+        "python",
+        "visualizer",
+        "preview"
     ],
     "activationEvents": [
         "onCommand:pythonPreview.showPreview",

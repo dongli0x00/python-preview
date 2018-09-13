@@ -9,6 +9,7 @@ yarn.lock
 
 .vscode/**
 .vscode-test/**
+images/**
 out/test/**
 out/**/*.map
 preview-src/**

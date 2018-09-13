@@ -11,6 +11,8 @@ vsc-extension-quickstart.md
 .vscode
 .vscode-test/**
 .vscode-test
+images
+images/**
 out/test/**
 out/test
 out/**/*.map
