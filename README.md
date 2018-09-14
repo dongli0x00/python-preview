@@ -5,6 +5,8 @@ A [Visual Studio Code](https://code.visualstudio.com/) [extension](https://marke
 
 ## Features
 
+![Preview](https://raw.githubusercontent.com/dongli0x00/python-preview/master/images/previewDemo.gif)
+
 
 ## Requirements
 
