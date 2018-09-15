@@ -5,6 +5,7 @@ gulpfile.js
 tsconfig.json
 tslint.json
 vsc-extension-quickstart.md
+ThirdPartyNotices.txt
 yarn.lock
 
 .vscode/**
