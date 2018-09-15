@@ -13,6 +13,7 @@ images/**
 out/test/**
 out/**/*.map
 preview-src/**
+python-preview/**
 pythonFiles/pydev/__pycache__/**
 src/**
 testExtension/**
