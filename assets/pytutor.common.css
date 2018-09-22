@@ -56,7 +56,7 @@ div.ExecutionVisualizer table#pyCodeOutput {
 /**
  * 代码所在行。
  */
-div.ExecutionVisulaizer table#pyCodeOutput td {
+div.ExecutionVisualizer table#pyCodeOutput td {
     white-space: nowrap;
     vertical-align: middle;
 }
@@ -82,7 +82,7 @@ div.ExecutionVisualizer #curLegendArrowSVG {
 /**
  * 代码行号。
  */
-div.ExecutionViualizer table#pyCodeOutput .lineNo {
+div.ExecutionVisualizer table#pyCodeOutput .lineNo {
     padding: 0.2em 0.5em 0.2em 0.3em;
     text-align: right;
 }
