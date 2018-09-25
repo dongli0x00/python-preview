@@ -114,9 +114,9 @@ export class PythonProcess extends EventEmitter implements IPythonProcess {
         this._callbackHandler.handleIncomingData();
     }
 
-    public sendExecutableText(folder: string, fileName: string, code: string, showAllFrames: boolean, allowAllModules: boolean, maxExecutedLines: number) {
+    public sendExecutableText(folder: string, fileName: string, code: string, cumulativeModde: boolean, allowAllModules: boolean, maxExecutedLines: number) {
         this._stream.write(Commands.OutputCommandBytes);
-        if (showAllFrames) {
+        if (cumulativeModde) {
             this._stream.writeInt64(1);
         } else {
             this._stream.writeInt64(0);

@@ -1,3 +1,6 @@
+## Version 0.0.4
+- Fix: Fixed cumulativeMode setting invalid error
+
 ## Version 0.0.3
 - Fix: Fixed style error.
 

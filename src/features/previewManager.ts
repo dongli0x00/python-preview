@@ -243,11 +243,11 @@ export class PythonPreviewManager implements vscode.WebviewPanelSerializer {
     private sendMessage(fileName: string, code: string) {
         const config = this._previewConfigurationManager.getConfigCacheForResource(vscode.Uri.file(fileName));
         const folder = PythonPreviewManager.getWorkspacePathOrPathRealtiveToFile(fileName);
-        const showAllFrames = config.traceConfig.showAllFrames;
+        const cumulativeMode = config.traceConfig.cumulativeMode;
         const allowAllModules = config.traceConfig.allowAllModules;
         const maxExecutedLines = config.traceConfig.maxExecutedLines;
         this._logger.info('Sending executed code to debugger');
-        this._pythonProcess!.sendExecutableText(folder, fileName, code, showAllFrames, allowAllModules, maxExecutedLines);
+        this._pythonProcess!.sendExecutableText(folder, fileName, code, cumulativeMode, allowAllModules, maxExecutedLines);
     }
 
     private static getWorkspacePathOrPathRealtiveToFile(fileName: string) {
